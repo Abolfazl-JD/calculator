@@ -72,6 +72,7 @@ menha.onclick = () => {
 fac.onclick = () => {
     y = parseInt(y)
     textarea.textContent = factorial(y)
+    y = textarea.textContent
 }
 
 assign.onclick = () => {
