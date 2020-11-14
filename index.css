@@ -1,0 +1,57 @@
+.boxes {
+    color: cornflowerblue;
+    background-color: rgb(230, 230, 230);
+    font-size: 51px;
+    text-align: center;
+    border: 1px solid gray;
+}
+
+.col-md-6,
+.col-md-3 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-md-12.row {
+    padding-right: 0;
+    padding-left: 43px;
+    position: fixed;
+    bottom: 0;
+}
+
+.ops {
+    color: #000;
+    background-color: rgb(230, 230, 230);
+    font-size: 30px;
+    height: 78px;
+    line-height: 78px;
+    text-align: center;
+    border: 1px solid gray;
+}
+
+textarea {
+    font-size: 4rem;
+    font-weight: 400;
+    padding-top: 50px;
+    height: 290px;
+    border: 0;
+    padding-left: 77px !important;
+}
+
+textarea:focus {
+    outline: 0 !important;
+}
+
+button.col-md-2 {
+    color: #ff9900;
+    border: 1px solid gray;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+
+.main {
+    padding-left: 43px !important;
+    padding-right: 43px !important;
+    position: relative;
+    bottom: 28px;
+}
