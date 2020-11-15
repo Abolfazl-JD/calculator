@@ -1,22 +1,23 @@
 let boxes = document.querySelectorAll('.boxes')
 let textarea = document.querySelector('textarea')
-let sin = document.getElementById('sin')
-let logg = document.getElementById('logg')
-let cos = document.getElementById('cos')
-let sqrt = document.getElementById('sqrt')
-let tan = document.getElementById('tan')
 let reset = document.getElementById('reset')
-let sum = document.getElementById('sum')
-let zarb = document.getElementById('zarb')
-let tavan2 = document.getElementById('tavan2')
-let tavan3 = document.getElementById('tavan3')
-let bar = document.getElementById('bar')
-let menha = document.getElementById('menha')
 let assign = document.getElementById('assign')
 let fac = document.getElementById('fac')
+let operators = document.querySelectorAll('.operators')
+let ops = document.querySelectorAll('.ops')
 let y = ''
 let clear = true
 let x
+
+let obj = {
+    tan: Math.tan,
+    cos: Math.cos,
+    sin: Math.sin,
+    sqrt: Math.sqrt,
+    log: Math.log,
+
+}
+
 for (let i = 0; i < boxes.length; i++) {
     const box = boxes[i];
     box.onclick = function() {
@@ -29,61 +30,30 @@ for (let i = 0; i < boxes.length; i++) {
         textarea.textContent = y
     }
 }
-sin.onclick = () => {
-    textarea.textContent = Math.sin(parseInt(y))
-    y = textarea.textContent
-    clear = false
+
+for (let i = 0; i < ops.length; i++) {
+    const op = ops[i];
+    let ids = op.getAttribute('id')
+    op.onclick = function() {
+        if (ids === 'tavan2') textarea.textContent = Math.pow(parseInt(y), 2)
+        else if (ids === 'tavan3') textarea.textContent = Math.pow(parseInt(y), 3)
+        else textarea.textContent = obj[ids](parseInt(y))
+        y = textarea.textContent
+        clear = false
+    }
+
 }
-cos.onclick = () => {
-    textarea.textContent = Math.cos(parseInt(y))
-    y = textarea.textContent
-    clear = false
+
+for (let i = 0; i < operators.length; i++) {
+    const op = operators[i];
+    op.onclick = function() {
+        let id_op = op.getAttribute('id')
+        y = y.concat(id_op)
+        textarea.textContent = y
+        clear = true
+    }
 }
-tan.onclick = () => {
-    textarea.textContent = Math.tan(parseInt(y))
-    y = textarea.textContent
-    clear = false
-}
-sqrt.onclick = () => {
-    textarea.textContent = Math.sqrt(parseInt(y))
-    y = textarea.textContent
-    clear = false
-}
-logg.onclick = () => {
-    textarea.textContent = Math.log(parseInt(y))
-    y = textarea.textContent
-    clear = false
-}
-tavan2.onclick = () => {
-    textarea.textContent = Math.pow(parseInt(y), 2)
-    y = textarea.textContent
-    clear = false
-}
-tavan3.onclick = () => {
-    textarea.textContent = Math.pow(parseInt(y), 3)
-    y = textarea.textContent
-    clear = false
-}
-sum.onclick = () => {
-    clear = true
-    y = y.concat('+')
-    textarea.textContent = y
-}
-zarb.onclick = () => {
-    clear = true
-    y = y.concat('*')
-    textarea.textContent = y
-}
-bar.onclick = () => {
-    clear = true
-    y = y.concat('/')
-    textarea.textContent = y
-}
-menha.onclick = () => {
-    clear = true
-    y = y.concat('-')
-    textarea.textContent = y
-}
+
 
 fac.onclick = () => {
     y = parseInt(y)
