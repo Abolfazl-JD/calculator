@@ -1,6 +1,6 @@
 .boxes {
-    color: cornflowerblue;
-    background-color: rgb(230, 230, 230);
+    color: white;
+    background-color: #333333;
     font-size: 51px;
     text-align: center;
     border: 1px solid gray;
@@ -17,16 +17,6 @@
     padding-left: 43px;
     position: fixed;
     bottom: 0;
-}
-
-.ops {
-    color: #000;
-    background-color: rgb(230, 230, 230);
-    font-size: 30px;
-    height: 78px;
-    line-height: 78px;
-    text-align: center;
-    border: 1px solid gray;
 }
 
 textarea {
@@ -54,4 +44,19 @@ button.col-md-2 {
     padding-right: 43px !important;
     position: relative;
     bottom: 28px;
+}
+
+#reset {
+    background-color: #007aff;
+    color: #fff
+}
+
+.ops {
+    color: #fff;
+    background-color: #ff683a;
+    font-size: 30px;
+    height: 78px;
+    line-height: 78px;
+    text-align: center;
+    border: 1px solid white;
 }
