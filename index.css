@@ -60,3 +60,7 @@ button.col-md-2 {
     text-align: center;
     border: 1px solid white;
 }
+
+button:focus {
+    outline: 0;
+}
