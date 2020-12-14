@@ -26,8 +26,8 @@ for (let i = 0; i < boxes.length; i++) {
         else if (clear) y = y.concat(x)
         else {
             y = x.toLocaleString()
-            clear = true
         }
+        clear = true
         setResult(textarea, y)
     }
 }
