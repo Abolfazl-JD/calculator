@@ -12,11 +12,13 @@
     padding-right: 0;
 }
 
-.col-md-12.row {
+.all {
     padding-right: 0;
     padding-left: 43px;
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 textarea {
@@ -40,10 +42,8 @@ button.col-md-2 {
 }
 
 .main {
-    padding-left: 43px !important;
-    padding-right: 43px !important;
+    padding-right: 60px !important;
     position: relative;
-    bottom: 28px;
 }
 
 #reset {
@@ -63,4 +63,20 @@ button.col-md-2 {
 
 button:focus {
     outline: 0;
+}
+
+svg {
+    margin-bottom: 10px;
+}
+
+#turner {
+    display: none;
+    position: absolute;
+    right: 76px;
+    color: black;
+    font-size: 26px;
+}
+
+#delete {
+    background-color: #006ea8;
 }

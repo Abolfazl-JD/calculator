@@ -5,9 +5,16 @@ let assign = document.getElementById('assign')
 let fac = document.getElementById('fac')
 let operators = document.querySelectorAll('.operators')
 let ops = document.querySelectorAll('.ops')
+let save = document.getElementById('save')
+let unsave = document.getElementById('unsave')
+let prove = document.getElementById('prove')
+let turner = document.getElementById('turner')
+let deletor = document.getElementById('delete')
 let y = '0'
 let clear = true
 let x
+let saveNum = ''
+let regex = /,/g
 
 let obj = {
     tan: Math.tan,
@@ -15,7 +22,8 @@ let obj = {
     sin: Math.sin,
     sqrt: Math.sqrt,
     log: Math.log,
-
+    floor: Math.floor,
+    abs: Math.abs
 }
 
 for (let i = 0; i < boxes.length; i++) {
@@ -33,6 +41,7 @@ for (let i = 0; i < boxes.length; i++) {
 }
 
 for (let i = 0; i < ops.length; i++) {
+    y = y.replace(regex, '')
     const op = ops[i];
     let ids = op.getAttribute('id')
     op.onclick = function() {
@@ -46,6 +55,7 @@ for (let i = 0; i < ops.length; i++) {
 }
 
 for (let i = 0; i < operators.length; i++) {
+    y = y.replace(regex, '')
     const op = operators[i];
     op.onclick = function() {
         let id_op = op.getAttribute('id')
@@ -64,6 +74,7 @@ fac.onclick = () => {
 }
 
 assign.onclick = () => {
+    y = y.replace(regex, '')
     let z = eval(y)
     if (isNaN(z) || z === Infinity) z = 0
     setResult(textarea, z)
@@ -83,6 +94,37 @@ function factorial(n) {
         return n * factorial(n - 1);
     }
 }
+
+save.onclick = () => {
+    if (y !== "0") {
+        saveNum = y
+        turner.style.display = "block"
+    }
+}
+
+unsave.onclick = () => {
+    saveNum = ""
+    turner.style.display = "none"
+}
+
+prove.onclick = () => {
+    let test = /\D$/.test(y)
+    if (saveNum === "") {
+        alert("There aren't any saved numbers")
+    } else if (test) {
+        y = y + saveNum
+        setResult(textarea, y)
+    } else if (!clear) {
+        y = saveNum
+        setResult(textarea, saveNum)
+    } else alert('just use MRC after assignment')
+}
+
+deletor.onclick = () => {
+    y = y.substring(0, y.length - 1)
+    setResult(textarea, y)
+}
+
 
 function setResult(textarea, y) {
     textarea.textContent = y
