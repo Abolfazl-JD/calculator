@@ -41,10 +41,10 @@ for (let i = 0; i < boxes.length; i++) {
 }
 
 for (let i = 0; i < ops.length; i++) {
-    y = y.replace(regex, '')
     const op = ops[i];
-    let ids = op.getAttribute('id')
     op.onclick = function() {
+        y = y.replace(regex, '')
+        let ids = op.getAttribute('id')
         if (ids === 'tavan2') setResult(textarea, Math.pow(parseInt(y), 2))
         else if (ids === 'tavan3') setResult(textarea, Math.pow(parseInt(y), 3))
         else setResult(textarea, obj[ids](parseInt(y)))
@@ -55,13 +55,14 @@ for (let i = 0; i < ops.length; i++) {
 }
 
 for (let i = 0; i < operators.length; i++) {
-    y = y.replace(regex, '')
     const op = operators[i];
     op.onclick = function() {
+        clear = true
+        console.log(clear, y)
+        y = y.replace(regex, '')
         let id_op = op.getAttribute('id')
         y = y.concat(id_op)
         setResult(textarea, y)
-        clear = true
     }
 }
 
@@ -76,9 +77,10 @@ fac.onclick = () => {
 assign.onclick = () => {
     y = y.replace(regex, '')
     let z = eval(y)
+    console.log(z)
     if (isNaN(z) || z === Infinity) z = 0
     setResult(textarea, z)
-    y = z.toLocaleString()
+    y = String(z)
     clear = false
 }
 
