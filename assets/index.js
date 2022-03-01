@@ -1,7 +1,7 @@
 let boxes = document.querySelectorAll('.boxes')
 let textarea = document.querySelector('textarea')
-let reset = document.getElementById('reset')
-let assign = document.getElementById('assign')
+let resets = document.querySelectorAll('.reset')
+let assigns = document.querySelectorAll('.assign')
 let fac = document.getElementById('fac')
 let operators = document.querySelectorAll('.operators')
 let ops = document.querySelectorAll('.ops')
@@ -74,19 +74,25 @@ fac.onclick = () => {
     clear = false
 }
 
-assign.onclick = () => {
-    y = y.replace(regex, '')
-    let z = eval(y)
-    console.log(z)
-    if (isNaN(z) || z === Infinity) z = 0
-    setResult(textarea, z)
-    y = String(z)
-    clear = false
+for (let i = 0; i < assigns.length; i++) {
+    const assign = assigns[i];
+    assign.onclick = function () {
+        y = y.replace(regex, '')
+        let z = eval(y)
+        console.log(z)
+        if (isNaN(z) || z === Infinity) z = 0
+        setResult(textarea, z)
+        y = String(z)
+        clear = false
+    }
 }
 
-reset.onclick = function() {
-    y = '0'
-    setResult(textarea, y)
+for (let i = 0; i < resets.length; i++) {
+    const reset = resets[i];
+    reset.onclick = function() {
+        y = '0'
+        setResult(textarea, y)
+    }
 }
 
 function factorial(n) {
