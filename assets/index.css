@@ -1,9 +1,42 @@
+@media (max-width : 768px) {
+    .all{
+        display: none;
+    }
+    .mobile-calculator{
+        display: block !important;
+    }
+    .boxes,.ops{
+        font-size: 6vw;
+    }
+
+    .numbs{
+        font-size: 9vw !important;
+    }
+}
+
+@media (min-width : 768px) {
+    .boxes{
+        font-size: 51px;
+    }
+
+    .ops{
+        font-size: 30px;
+    }
+
+    textarea{
+        padding-left: 77px !important;
+        padding-top: 50px;
+    }
+}
+
 .boxes {
     color: white;
     background-color: #0c2634;
-    font-size: 51px;
     text-align: center;
     border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .col-md-6,
@@ -12,22 +45,29 @@
     padding-right: 0;
 }
 
-.all {
-    padding-right: 0;
-    padding-left: 43px;
+.mobile-calculator{
+    display: none;
+}
+
+.all,.mobile-calculator {
     position: fixed;
-    bottom: 0;
     left: 0;
     right: 0;
+}
+
+.all{
+    bottom: 0;
+}
+
+.mobile-calculator{
+    bottom: -8px;
 }
 
 textarea {
     font-size: 4rem;
     font-weight: 400;
-    padding-top: 50px;
     height: 290px;
     border: 0;
-    padding-left: 77px !important;
 }
 
 textarea:focus {
@@ -41,11 +81,6 @@ button.col-md-2 {
     font-size: 30px;
 }
 
-.main {
-    padding-right: 60px !important;
-    position: relative;
-}
-
 #reset {
     background-color: #ff2e77;
     color: #fff;
@@ -54,9 +89,11 @@ button.col-md-2 {
 .ops {
     color: #fff;
     background-color: #0c2634;
-    font-size: 30px;
     height: 78px;
     line-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     border: 1px solid gray;
 }

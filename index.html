@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/index.css" />
@@ -12,7 +13,7 @@
     <textarea readonly class="container-fluid"></textarea>
 
     <div class="all">
-      <div class="container-fluid main row">
+      <div class="row">
         <button class="col-md-2 boxes" id="reset">C/CE</button>
         <div class="ops col-md-2" id="log">log</div>
         <div class="ops col-md-2" id="tavan2">x <sup>2</sup></div>
@@ -32,18 +33,14 @@
             />
           </svg>
         </div>
-      </div>
-
-      <div class="container-fluid main row">
+        
         <div class="col-md-2 ops" id="prove">MRC</div>
         <div class="ops col-md-2" id="unsave">M-</div>
         <div class="ops col-md-2" id="save">M+</div>
         <div class="ops col-md-2" id="abs">abs</div>
         <div class="ops col-md-2" id="sqrt">Radical</div>
         <div class="ops col-md-2" id="floor">round</div>
-      </div>
-      <div class="col-md-12 row">
-        <div class="col-md-9 row">
+        <div class="col-md-9 row m-0">
           <div class="boxes col-md-4">1</div>
           <div class="boxes col-md-4">2</div>
           <div class="boxes col-md-4">3</div>
@@ -58,24 +55,48 @@
           <div class="boxes col-md-4">0</div>
         </div>
         <div class="col-md-3 row">
-          <div class="col-md-6">
-            <div class="ops" id="tan">tan</div>
-            <div class="ops" id="cos">Cos</div>
-            <div class="ops operators" id="/">÷</div>
-            <div class="boxes" id="assign" style="background-color: #04b0fa">
+          <div class="ops col-md-6" id="tan">tan</div>
+          <div class="ops col-md-6" id="cos">Cos</div>
+          <div class="ops operators col-md-6" id="/">÷</div>
+          <div class="ops col-md-6" id="sin">Sin</div>
+          <div class="ops operators col-md-6" id="+">+</div>
+          <div class="ops operators col-md-6" id="*">×</div>
+          <div class="ops operators col-md-6" id="-">_</div>
+          <div class="boxes col-md-6" id="assign" style="background-color: #04b0fa">
               =
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="ops" id="sin">Sin</div>
-            <div class="ops operators" id="+">+</div>
-            <div class="ops operators" id="*">×</div>
-            <div class="ops operators" id="-">_</div>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="assets/index.js"></script>
+    <div class="mobile-calculator">
+      <div class="row">
+        <button class="col-3 boxes" id="reset">C/CE</button>
+        <div class="ops col-3" id="tavan2">x <sup>2</sup></div>
+        <div class="ops col-3" id="sqrt">Radical</div>
+        <div class="ops operators col-3" id="/">÷</div>
+        <div class="boxes col-3 numbs">1</div>
+        <div class="boxes col-3 numbs">2</div>
+        <div class="boxes col-3 numbs">3</div>
+        <div class="ops operators col-3" id="*">×</div>
+        <div class="boxes col-3 numbs">4</div>
+        <div class="boxes col-3 numbs">5</div>
+        <div class="boxes col-3 numbs">6</div>
+        <div class="ops operators col-3" id="-">_</div>
+        <div class="boxes col-3 numbs">7</div>
+        <div class="boxes col-3 numbs">8</div>
+        <div class="boxes col-3 numbs">9</div>
+        <div class="ops operators col-3" id="+">+</div>
+        <div class="boxes col-3 numbs">00</div>
+        <div class="boxes col-3 numbs card-header">0</div>
+        <div class="boxes col-3 numbs">.</div>
+        <div class="boxes col-3 pr-4 font-weight-bold" id="assign" style="background-color: #04b0fa">
+          =
+      </div>
+      </div>
+    </div>
+          
+  <script src="assets/index.js"></script>
   </body>
-</html>
+  </html>
+        
